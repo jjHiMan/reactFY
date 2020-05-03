@@ -1,0 +1,9 @@
+.background{
+  background: url("../../assets/img/1.png");
+  background-size: 100%;
+  width: 92%;
+  height: 280px;
+  border-radius: 20px;
+  margin: 0 auto ;
+  margin-top: 20px;
+}

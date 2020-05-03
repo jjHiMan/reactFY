@@ -1,0 +1,52 @@
+.strilling{
+    width: 640px;
+    height: 288px;
+    padding: 25px;
+    background: #F5F5F5;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    img{
+        height: 272px;
+        border:2px solid #acacac;
+        border-radius: 5px;
+    }
+    div{
+        width: 380px;
+        text-align: left;
+        p:first-child{
+            color:#666666;
+            margin: 5px 0;
+        }
+        p:nth-child(2){
+            font-size: 28px;
+            margin: 15px 0;
+        }
+        p:nth-child(3){
+            margin-bottom: 30px;
+            span:first-child{
+                font-size: 30px;
+                color: #ff6743;
+            }
+            span:last-child{
+                color: #999;
+            }
+        }
+        p:last-child{
+            border-top: 1px solid rgba(204,204,204,0.8);
+            //opacity: 0.5;
+            display: flex;
+            justify-content: space-between;
+            span{
+                margin-top: 25px;
+                color:#666;
+            }
+            span:first-child{
+                color:#999;
+                span{
+                    color:#ff6743;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.hot-header{
+  width: 92%;
+  height: 100px;
+  line-height: 100px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 30px;
+  strong{
+    font-size: 40px;
+  }
+}
+.hot-show::-webkit-scrollbar {
+  display:none
+}
+.hot-show{
+  margin-left: 4%;
+  display: flex;
+  display: -webkit-box;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling:touch;
+  div{
+    width: 200px;
+    margin-right: 20px;
+    img{
+      height: 272px;
+      border:2px solid #acacac;
+      border-radius: 5px;
+    }
+    h3{
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+  }
+
+}

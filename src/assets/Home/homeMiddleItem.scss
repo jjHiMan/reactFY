@@ -1,0 +1,22 @@
+.middle-item {
+  width: 92%;
+  height: 300px;
+  margin: 0 auto;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    list-style: none;
+    width: 20%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    span > img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+}

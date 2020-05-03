@@ -1,0 +1,27 @@
+.dialog{
+  position: absolute;
+  top:60px;
+  right: 40px;
+  //opacity: 1;
+  div:first-child{
+    width: 0;
+    height: 0;
+    border-width: 0.21333rem;
+    border-style: solid;
+    margin-left: 3.06667rem;
+    border-color: transparent transparent white transparent;
+  }
+  div:nth-child(2){
+    background: white;
+    width: 280px;
+    height: 88px;
+    border-bottom: 2px solid #cccccc;
+    border-radius: 5px 5px 0 0;
+  }
+  div:last-child{
+    background: white;
+    width: 280px;
+    height: 88px;
+    border-radius: 0 0 5px 5px;
+  }
+}

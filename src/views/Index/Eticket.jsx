@@ -1,5 +1,6 @@
-import React from "react";
-
+import React,{Fragment} from "react";
+import '../../assets/eticket/etucket.scss'
+import Dialog from "../../components/common/Dialog";
 export default class Eticket extends React.Component {
     constructor(props) {
         super(props);
@@ -8,9 +9,29 @@ export default class Eticket extends React.Component {
 
     render() {
         return (
-            <div>
-                票夹
-            </div>
+            <Fragment>
+                <div style={{position:"relative"}} >
+                    <div className={"eticket-header"}>
+                        票夹
+                        <strong onClick={()=>{
+                            const shade = document.querySelector(".shade");
+                            shade.style.display = 'block';
+                        }}>. . .</strong>
+                    </div>
+
+                    <div className={"eticket-content"}>
+                        <img src="https://m.juooo.com/static/img/ticket_empty.cf4b072.png" alt=""/>
+                        <p>暂无电子票</p>
+                        <div>登录</div>
+                    </div>
+                    <div className={"shade"} onClick={()=>{
+                        const shade = document.querySelector(".shade");
+                        shade.style.display = 'none';
+                    }}>
+                        <Dialog></Dialog>
+                    </div>
+                </div>
+            </Fragment>
         )
     }
 }

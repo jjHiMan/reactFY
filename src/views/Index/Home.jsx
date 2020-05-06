@@ -6,6 +6,7 @@ import LabelBanner from "../../components/Home/LabelBanner";
 import HotShow from "../../components/Home/HotShow";
 import Strolling from "../../components/Home/Strolling";
 import HomeWaterfall from "../../components/Home/HomeWaterfall";
+import StageDesign from "../../components/Home/StageDesign";
 import Image from '../../assets/img/5.png'
 import Image1 from '../../assets/img/7.png'
 import '../../assets/Home/home.css';
@@ -27,6 +28,7 @@ export default class Home extends React.Component {
                 </div>
                 <HotShow></HotShow>
                 <Strolling></Strolling>
+                <StageDesign></StageDesign>
                 <HomeWaterfall></HomeWaterfall>
                 <div className={"home-flexd"}>
                     <img src={Image1} alt=""/>

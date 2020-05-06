@@ -1,10 +1,13 @@
 import React, { Fragment } from "react";
 import '../../assets/Home/hotShow.scss';
+import {
+    Link
+} from 'react-router-dom';
 import axios from "axios";
 import {
     connect
 } from "react-redux";
-import { upHomeHotShow } from '../../store/actionCreator/homeHotShow';
+import { upHomeHotShow } from '../../store/actionCreator/home';
 class HotShow extends React.Component {
     constructor(props) {
         super(props);
@@ -17,16 +20,18 @@ class HotShow extends React.Component {
             <Fragment>
                 <div className={"hot-header"}>
                     <strong>热门演出</strong>
-                    <span>全部 ></span>
+                    <Link to={"/showList"}>
+                        <span>全部 ></span>
+                    </Link>
                 </div>
                 <div className={"hot-show"}>
                     {
-                        hots_show_list.map((v,i) => (
+                        hots_show_list.map((v, i) => (
                             <div className={"hot-show-list"} key={i}>
-                                <a href="http://localhost:3000/showDetails">
+                                <Link to={'/showDetails'}>
                                     <img src={v.pic} alt="" />
                                     <h3>{v.show_name}</h3>
-                                </a>
+                                </Link>
                             </div>
                         ))
                     }
@@ -38,9 +43,9 @@ class HotShow extends React.Component {
         this.props.listMore.call(this);
     }
 }
-function mapStateToProps({ homeHotShow }) {
+function mapStateToProps({ home }) {
     return {
-        hots_show_list: homeHotShow.hots_show_list
+        hots_show_list: home.hots_show_list
     }
 }
 function mapDispatchToProps(dispatch) {

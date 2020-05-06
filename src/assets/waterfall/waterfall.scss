@@ -1,18 +1,19 @@
 .showList-waterfall {
   width: 92%;
-  display: flex;
-  justify-content: space-between;
   margin: 0 auto;
   border-radius: 10px;
 
   .showList-waterfall-content {
-    width: 339px;
+    width: 100%;
 
-    li {
+    .showList-waterfall-list {
+      width: 339px;
       background: white;
       border-radius: 5px;
       margin-bottom: 10px;
-
+      float: left;
+      margin-right: 6px;
+      
       .waterfall-content {
         padding: 20px;
 

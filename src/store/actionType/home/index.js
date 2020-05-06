@@ -1,0 +1,4 @@
+export default {
+    UP_HOMEHOTSHOW:"UP_HOMEHOTSHOW",
+    UP_WATERFALL:"UP_WATERFALL"
+}

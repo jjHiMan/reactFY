@@ -11,7 +11,9 @@ export default class ShowList extends React.Component {
         return (
             <div className={"showList"}>
                 <div className={"showList-header"}>
-                    <span className={"iconfont icon-xiangqian"}></span>
+                    <span className={"iconfont icon-xiangqian"}
+                          onClick={()=>{this.props.history.go(-1);}}>
+                    </span>
                     <span>演出</span>
                     <span className={"iconfont icon-diandian"}></span>
                 </div>

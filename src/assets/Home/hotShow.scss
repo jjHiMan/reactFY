@@ -22,6 +22,7 @@
   .hot-show-list{
     width: 200px;
     margin-right: 20px;
+    text-align: left !important;
     img{
       height: 272px;
       border:2px solid #acacac;
@@ -32,8 +33,16 @@
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 2;
       overflow: hidden;
-      margin: 20px 0;
+      margin: 5px 0;
       color: black;
+    }
+    .hot-price{
+      color: #ff6743;
+      font-size: 0.42667rem;
+    }
+    .hot-hei{
+      font-size: 0.29333rem;
+      color: #999;
     }
   }
 

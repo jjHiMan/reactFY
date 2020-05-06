@@ -1,6 +1,7 @@
 import React,{Fragment} from "react";
+import {withRouter} from 'react-router-dom'
 import '../../assets/Dialog/dialog.scss';
-export default class Dialog extends React.Component {
+class Dialog extends React.Component {
     constructor(props) {
         super(props);
         this.state = {}
@@ -11,10 +12,15 @@ export default class Dialog extends React.Component {
             <Fragment>
                 <div className={"dialog"}>
                     <div></div>
-                    <div><span>标</span><span>主页</span></div>
-                    <div><span>标</span><span>我的聚橙</span></div>
+                    <div onClick={()=>{
+                        this.props.history.push('/');
+                    }}><span className={"iconfont icon-yemian"}></span><span>主页</span></div>
+                    <div onClick={()=>{
+                        this.props.history.push("/myjuooo");
+                    }}><span className={"iconfont icon-wode4"}></span><span>我的聚橙</span></div>
                 </div>
             </Fragment>
         )
     }
 }
+export default withRouter(Dialog);

@@ -1,8 +1,8 @@
 .dialog{
-  position: absolute;
+  position: fixed;
   top:60px;
   right: 40px;
-  //opacity: 1;
+  opacity: 1 !important;
   div:first-child{
     width: 0;
     height: 0;
@@ -17,11 +17,23 @@
     height: 88px;
     border-bottom: 2px solid #cccccc;
     border-radius: 5px 5px 0 0;
+    display: flex;
+    align-items: center;
+    font-size: 0.4rem;
+    span{
+      margin-left: 30px;
+    }
   }
   div:last-child{
     background: white;
     width: 280px;
     height: 88px;
     border-radius: 0 0 5px 5px;
+    display: flex;
+    align-items: center;
+    font-size: 0.4rem;
+    span{
+      margin-left: 30px;
+    }
   }
 }

@@ -1,11 +1,17 @@
-import React, { Component } from 'react'
-import "../assets/showDetails/content.scss"
-export default class ShowDetails extends Component {
+import React, { Component } from 'react';
+import "../assets/showDetails/content.scss";
+import axios from "axios";
+import {
+    connect
+} from "react-redux";
+import { upShowDetails } from '../store/actionCreator/showDetails';
+class ShowDetails extends Component {
     constructor(props) {
         super(props);
         this.state = {}
     }
     render() {
+        const { list } = this.props;
         return (
             <div>
                 <div className={"details_box"}>
@@ -68,7 +74,7 @@ export default class ShowDetails extends Component {
                         </div>
                         <div className={"detail_foot"}>
                             <div className={"detail_foot_img"}>
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAb1BMVEUAAABmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmbw3/OPAAAAJHRSTlMAH4DvLAySB/Tg05n5rk3opHxiwKCKOhUP4qh0M9jNbli4hSkY6Xp9AAABR0lEQVQ4y52R6ZKCMBAGB8IREg4FEVA8drff/xlXsHZLNAhl/yJDJ1/NjHxInNuzBn22eSzztL7iH+W3c15eABRVllX3r9zt1YCqAxkJagXULs8C0UNaGwH21duCforKNWyfvT3o/UtRw1MxPsFVXrjCaTqmEjbiYAPlpGBIPZfopZjHczA+OPNk8HC8QD6zBLhM74VuMZxkxYZEZkgwf303VkFaur0yBWWbsZGCkcDlBYwUt59hAklk4egSj2CjwQiHHWexeOC7RB88ibNh5wYVyntRQoWRlIMsiXIgFYiWxQhWi6ujVzezfjzDwLv3A++Gga9e4Y0mUqBLcfINqKiRO7EXhOJmB9dYltmDkRU0CeQrvJ8TbGSGPgFI+tsS6hTO4ZyYMWKsAfhqZY4KvdtpRtRFZFlUWTnGLkRXnizQdwBdL5/yC+1CKknvBpjdAAAAAElFTkSuQmCC" alt=""/>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAb1BMVEUAAABmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmbw3/OPAAAAJHRSTlMAH4DvLAySB/Tg05n5rk3opHxiwKCKOhUP4qh0M9jNbli4hSkY6Xp9AAABR0lEQVQ4y52R6ZKCMBAGB8IREg4FEVA8drff/xlXsHZLNAhl/yJDJ1/NjHxInNuzBn22eSzztL7iH+W3c15eABRVllX3r9zt1YCqAxkJagXULs8C0UNaGwH21duCforKNWyfvT3o/UtRw1MxPsFVXrjCaTqmEjbiYAPlpGBIPZfopZjHczA+OPNk8HC8QD6zBLhM74VuMZxkxYZEZkgwf303VkFaur0yBWWbsZGCkcDlBYwUt59hAklk4egSj2CjwQiHHWexeOC7RB88ibNh5wYVyntRQoWRlIMsiXIgFYiWxQhWi6ujVzezfjzDwLv3A++Gga9e4Y0mUqBLcfINqKiRO7EXhOJmB9dYltmDkRU0CeQrvJ8TbGSGPgFI+tsS6hTO4ZyYMWKsAfhqZY4KvdtpRtRFZFlUWTnGLkRXnizQdwBdL5/yC+1CKknvBpjdAAAAAElFTkSuQmCC" alt="" />
                                 <div>客服</div>
                             </div>
                             <div className={"detail_foot_box"}>
@@ -107,7 +113,7 @@ export default class ShowDetails extends Component {
                         <div className={"detail_tips"}>
                             <div className={"detail_tips_main"}>
                                 <div className={"tips_title"}>
-                                    <span>温馨提醒</span> 
+                                    <span>温馨提醒</span>
                                     <span className={"tips_title_span"}>></span>
                                 </div>
                                 <ul className={"tips_list"}>
@@ -122,48 +128,31 @@ export default class ShowDetails extends Component {
                             <div className={"detail_recommend_main"}>
                                 <div className={"recommend_title"}>相关推荐</div>
                                 <div className={"recommend_list"}>
-                                    <div className={"recommend_list_item"}>
-                                        <div className={"recommend_list_main"}>
-                                            <div className={"recommend_list_main_img"}>
-                                                <img src="https://image.juooo.com/group1/M00/03/34/rAoKmV22uICAQ2WLAAFPaGvA5rE897.jpg" alt=""/>
-                                            </div>
-                                            <div className={"recommend_list_main_info"}>
-                                                <p className={"recommend_main_info_one"}>2020.08.22 - 08.23</p>
-                                                <p className={"recommend_main_info_two"}>四川人民艺术剧院-话剧《苏东坡》-石家庄</p>
-                                                <p className={"recommend_main_info_three"}>石家庄 | 石家庄大剧院-大剧场</p>
-                                                <div className={"recommend_main_info_for"}>
-                                                    <span>电子票</span>
-                                                    <span>可选座</span>
-                                                    <span>套票</span>
-                                                </div>
-                                                <div className={"recommend_main_info_five"}>
-                                                    <span className={"recommend_info_five_span"}>￥50</span>
-                                                    <span>起</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className={"recommend_list_item"}>
-                                        <div className={"recommend_list_main"}>
-                                            <div className={"recommend_list_main_img"}>
-                                                <img src="https://image.juooo.com/group1/M00/03/34/rAoKmV22uICAQ2WLAAFPaGvA5rE897.jpg" alt=""/>
-                                            </div>
-                                            <div className={"recommend_list_main_info"}>
-                                                <p className={"recommend_main_info_one"}>2020.08.22 - 08.23</p>
-                                                <p className={"recommend_main_info_two"}>四川人民艺术剧院-话剧《苏东坡》-石家庄</p>
-                                                <p className={"recommend_main_info_three"}>石家庄 | 石家庄大剧院-大剧场</p>
-                                                <div className={"recommend_main_info_for"}>
-                                                    <span>电子票</span>
-                                                    <span>可选座</span>
-                                                    <span>套票</span>
-                                                </div>
-                                                <div className={"recommend_main_info_five"}>
-                                                    <span className={"recommend_info_five_span"}>￥50</span>
-                                                    <span>起</span>
+                                    {
+                                        list.map(v => (
+                                            <div className={"recommend_list_item"} key={v.schedular_id}>
+                                                <div className={"recommend_list_main"}>
+                                                    <div className={"recommend_list_main_img"}>
+                                                        <img src={v.pic} alt="" />
+                                                    </div>
+                                                    <div className={"recommend_list_main_info"}>
+                                                        <p className={"recommend_main_info_one"}>2020.08.22 - 08.23</p>
+                                                        <p className={"recommend_main_info_two"}>{v.name}</p>
+                                                        <p className={"recommend_main_info_three"}>{v.city_name} | {v.venue_name}</p>
+                                                        <div className={"recommend_main_info_for"}>
+                                                            <span>电子票</span>
+                                                            <span>可选座</span>
+                                                            <span>套票</span>
+                                                        </div>
+                                                        <div className={"recommend_main_info_five"}>
+                                                            <span className={"recommend_info_five_span"}>￥{v.min_price}</span>
+                                                            <span>起</span>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
+                                        ))
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -172,4 +161,30 @@ export default class ShowDetails extends Component {
             </div>
         )
     }
+    componentDidMount() {
+        this.props.listMore.call(this);
+    }
 }
+function mapStateToProps({ showDetails }) {
+    return {
+        list: showDetails.list
+    }
+}
+function mapDispatchToProps(dispatch) {
+    return {
+        async listMore(category = 37, city_id = 36) {
+            // https://api.juooo.com/Show/Search/getShowList?category=37&city_id=36
+            const { data } = await axios.get("/orange/Show/Search/getShowList", {
+                params: {
+                    category,
+                    city_id
+                }
+            });
+
+            dispatch(upShowDetails(data.data));
+            console.log(data);
+
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(ShowDetails);

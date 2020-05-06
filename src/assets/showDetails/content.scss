@@ -406,7 +406,6 @@
 }
 .recommend_list{
     width: 705px;
-    height: 691px;
     margin-top: 25px;
 }
 .recommend_list_item{
@@ -436,10 +435,14 @@
     text-align: left;
 }
 .recommend_main_info_two{
-    height: 88px;
+    height: 82px;
     line-height: 40px;
     font-size: 35px;
     text-align: left;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
 }
 .recommend_main_info_three{
     height: 40px;

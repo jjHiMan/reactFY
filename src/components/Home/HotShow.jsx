@@ -1,12 +1,18 @@
-import React,{Fragment} from "react";
+import React, { Fragment } from "react";
 import '../../assets/Home/hotShow.scss';
-export default class HotShow extends React.Component {
+import axios from "axios";
+import {
+    connect
+} from "react-redux";
+import { upHomeHotShow } from '../../store/actionCreator/homeHotShow';
+class HotShow extends React.Component {
     constructor(props) {
         super(props);
         this.state = {}
     }
 
     render() {
+        const { hots_show_list } = this.props;
         return (
             <Fragment>
                 <div className={"hot-header"}>
@@ -14,30 +20,44 @@ export default class HotShow extends React.Component {
                     <span>全部 ></span>
                 </div>
                 <div className={"hot-show"}>
-                    <a href="http://localhost:3000/showDetails">
-                        <div>
-                            <img src="https://image.juooo.com//group1/M00/04/05/rAoKNV3p9MGAL4-fAABlWN_fCvM587.jpg" alt=""/>
-                            <h3>聚橙制作 | 法语音乐剧《摇滚红与黑》-深圳站</h3>
-                        </div>
-                    </a>
-                    <div>
-                        <img src="https://image.juooo.com//group1/M00/04/05/rAoKNV3p9MGAL4-fAABlWN_fCvM587.jpg" alt=""/>
-                        <h3>聚橙制作 | 法语音乐剧《摇滚红与黑》-深圳站</h3>
-                    </div>
-                    <div>
-                        <img src="https://image.juooo.com//group1/M00/04/05/rAoKNV3p9MGAL4-fAABlWN_fCvM587.jpg" alt=""/>
-                        <h3>聚橙制作 | 法语音乐剧《摇滚红与黑》-深圳站</h3>
-                    </div>
-                    <div>
-                        <img src="https://image.juooo.com//group1/M00/04/05/rAoKNV3p9MGAL4-fAABlWN_fCvM587.jpg" alt=""/>
-                        <h3>聚橙制作 | 法语音乐剧《摇滚红与黑》-深圳站</h3>
-                    </div>
-                    <div>
-                        <img src="https://image.juooo.com//group1/M00/04/05/rAoKNV3p9MGAL4-fAABlWN_fCvM587.jpg" alt=""/>
-                        <h3>聚橙制作 | 法语音乐剧《摇滚红与黑》-深圳站</h3>
-                    </div>
+                    {
+                        hots_show_list.map((v,i) => (
+                            <div className={"hot-show-list"} key={i}>
+                                <a href="http://localhost:3000/showDetails">
+                                    <img src={v.pic} alt="" />
+                                    <h3>{v.show_name}</h3>
+                                </a>
+                            </div>
+                        ))
+                    }
                 </div>
             </Fragment>
         )
     }
+    componentDidMount() {
+        this.props.listMore.call(this);
+    }
 }
+function mapStateToProps({ homeHotShow }) {
+    return {
+        hots_show_list: homeHotShow.hots_show_list
+    }
+}
+function mapDispatchToProps(dispatch) {
+    return {
+        async listMore(city_id = 0) {
+            // console.log(this.props.pageNo,this.props.pageSize);
+            // home/index/getHotsRecommendList?city_id=0
+            const { data } = await axios.get("/orange/home/index/getHotsRecommendList", {
+                params: {
+                    city_id
+                }
+            });
+
+            dispatch(upHomeHotShow(data.data));
+            console.log(data);
+
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(HotShow);

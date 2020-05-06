@@ -13,9 +13,14 @@
     text-decoration: none;
     color: #232323;
     width: 25%;
-}
-.foot a span{
     display: inline-block;
-    margin-top: 50px;
-    font-size: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.foot a i{
+    font-size: 45px;
+}
+.foot-active{
+    color:red;
 }

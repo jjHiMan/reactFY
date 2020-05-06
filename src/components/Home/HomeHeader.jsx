@@ -11,12 +11,12 @@ export default class HomeHeader extends React.Component {
             <Fragment>
                 <div className={"home-header"}>
                     <div className={"home-location"}>
-                        <span className={"icon icon-map"}></span>
-                        <strong>西安</strong>
+                        <span className={"iconfont icon-location"}></span>
+                        <strong></strong>
                     </div>
                     <div className={"home-search"}><strong></strong></div>
                     <div className={"home-calendar"}>
-                        <strong className={"icon icon-map"}>日历</strong>
+                        <span className={"iconfont icon-rili"}></span>
                     </div>
                 </div>
             </Fragment>

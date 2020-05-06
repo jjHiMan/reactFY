@@ -11,7 +11,11 @@ export default class Login extends React.Component {
     render() {
         return (
             <div>
-                <div className={"login-header"}><span></span></div>
+                <div className={"login-header"}><span className={"iconfont icon-xiangqian"}
+                    onClick={()=>{
+                        this.props.history.go(-1);
+                    }}
+                ></span></div>
                 <div className={"login-content"}>
                     <img src="https://m.juooo.com/static/img/login_logo.4a43235.png" alt=""/>
                     <div className={"login-telpass"}>

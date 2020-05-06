@@ -8,6 +8,9 @@ li{
 .App {
   text-align: center;
 }
+.APP-active{
+  color: red !important;
+}
 
 
 

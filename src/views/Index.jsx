@@ -21,10 +21,10 @@ export default class Index extends React.Component {
                 <Route path={'/eticket'} component={Eticket}></Route>
                 <Route path={'/myjuooo'} component={Myjuooo}></Route>
                 <footer className={"foot"}>
-                    <NavLink exact to={'/'}><span>首页</span></NavLink>
-                    <NavLink to={'/theatre'}><span>剧院</span></NavLink>
-                    <NavLink to={'/eticket'}><span>票夹</span></NavLink>
-                    <NavLink to={'/myjuooo'}><span>我的</span></NavLink>
+                    <NavLink activeClassName={"APP-active"} exact to={'/'}><i className={"iconfont icon-yemian"}></i><span>首页</span></NavLink>
+                    <NavLink activeClassName={"APP-active"} to={'/theatre'}><i className={"iconfont icon-juyuan"}></i><span>剧院</span></NavLink>
+                    <NavLink activeClassName={"APP-active"} to={'/eticket'}><i className={"iconfont icon-piaojia-copy-copy"}></i><span>票夹</span></NavLink>
+                    <NavLink activeClassName={"APP-active"} to={'/myjuooo'}><i className={"iconfont icon-wode4"}></i><span>我的</span></NavLink>
                 </footer>
             </div>
         )

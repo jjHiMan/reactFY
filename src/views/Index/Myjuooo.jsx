@@ -54,33 +54,33 @@ export default class Myjuooo extends React.Component {
                     </div>
                     <div className={"my-order"}>
                         <li>
-                            <span>0</span>
+                            <span className={"iconfont icon-logooo_huabanfuben"}></span>
                             <span>我的订单</span>
                         </li>
                         <li>
-                            <span>0</span>
+                            <span className={"iconfont icon-piaojia-copy-copy"}></span>
                             <span>我的票夹</span>
                         </li>
                         <li>
-                            <span>0</span>
+                            <span className={"iconfont icon-kabao"}></span>
                             <span>我的卡包</span>
                         </li>
                     </div>
                     <div className={"my-order"}>
                         <li>
-                            <span>0</span>
+                            <span className={"iconfont icon-iconfontsvgmoban05\n"}></span>
                             <span>实名购票人</span>
                         </li>
                         <li>
-                            <span>0</span>
+                            <span className={"iconfont icon-kabao"}></span>
                             <span>收货地址</span>
                         </li>
                         <li>
-                            <span>0</span>
+                            <span className={"iconfont icon-yijian"}></span>
                             <span>意见反馈</span>
                         </li>
                         <li>
-                            <span>0</span>
+                            <span className={"iconfont icon-kefu2"}></span>
                             <span style={{color:"#FF6743"}}>客服帮助</span>
                         </li>
                     </div>

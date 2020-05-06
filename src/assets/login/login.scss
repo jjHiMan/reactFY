@@ -1,6 +1,12 @@
 .login-header{
   height: 88px;
   width: 100%;
+  line-height: 88px;
+  display: flex;
+  span{
+    font-size: 45px;
+    margin-left: 30px;
+  }
 }
 .login-content{
   margin-top: 50px;

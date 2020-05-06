@@ -1,0 +1,114 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "620053",
+      "name": "购票",
+      "font_class": "iconfontsvgmoban05",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "2614829",
+      "name": "票夹",
+      "font_class": "piaojia-copy-copy",
+      "unicode": "e523",
+      "unicode_decimal": 58659
+    },
+    {
+      "icon_id": "3614171",
+      "name": "收货地址",
+      "font_class": "dizhi",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "6094484",
+      "name": "定位",
+      "font_class": "location",
+      "unicode": "e506",
+      "unicode_decimal": 58630
+    },
+    {
+      "icon_id": "7481345",
+      "name": "剧院",
+      "font_class": "juyuan",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "11466098",
+      "name": "我 的",
+      "font_class": "wode4",
+      "unicode": "e990",
+      "unicode_decimal": 59792
+    },
+    {
+      "icon_id": "13071703",
+      "name": "订单管理",
+      "font_class": "logooo_huabanfuben",
+      "unicode": "e662",
+      "unicode_decimal": 58978
+    },
+    {
+      "icon_id": "13148201",
+      "name": "向前",
+      "font_class": "xiangqian",
+      "unicode": "e501",
+      "unicode_decimal": 58625
+    },
+    {
+      "icon_id": "13599532",
+      "name": "意见",
+      "font_class": "yijian",
+      "unicode": "e68b",
+      "unicode_decimal": 59019
+    },
+    {
+      "icon_id": "14026951",
+      "name": "首页-选中",
+      "font_class": "yemian",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "14291047",
+      "name": "点点",
+      "font_class": "diandian",
+      "unicode": "e502",
+      "unicode_decimal": 58626
+    },
+    {
+      "icon_id": "14327016",
+      "name": "客服",
+      "font_class": "kefu2",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
+      "icon_id": "14379433",
+      "name": "日历",
+      "font_class": "rili",
+      "unicode": "e6c1",
+      "unicode_decimal": 59073
+    },
+    {
+      "icon_id": "14436048",
+      "name": "设 置",
+      "font_class": "shezhi",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "14460978",
+      "name": "卡包",
+      "font_class": "kabao",
+      "unicode": "e5d4",
+      "unicode_decimal": 58836
+    }
+  ]
+}

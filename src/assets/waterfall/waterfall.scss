@@ -1,0 +1,76 @@
+.showList-waterfall {
+  width: 92%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  border-radius: 10px;
+
+  .showList-waterfall-content {
+    width: 339px;
+
+    li {
+      background: white;
+      border-radius: 5px;
+      margin-bottom: 10px;
+
+      .waterfall-content {
+        padding: 20px;
+
+        div {
+          position: relative;
+          display: inline-block;
+          font-weight: normal;
+          font-size: 0.37333rem;
+
+          span {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+
+            img {
+              position: relative;
+              top: 5px;
+              width: 67px;
+              height: 34px;
+            }
+          }
+        }
+
+        p:nth-child(2) {
+          margin: 15px 0;
+          font-size: 0.34667rem;
+          text-align: left;
+        }
+
+        p:nth-child(3) {
+          text-align: left;
+          margin-bottom: 15px;
+
+          span:first-child {
+            color: #FF6743;
+            font-size: 0.42667rem;
+          }
+
+          span:last-child {
+            color: #999;
+            font-size: 0.29333rem;
+          }
+        }
+
+        p:nth-child(4) {
+          display: flex;
+          flex-wrap: wrap;
+
+          span {
+            display: inline-block;
+            background: #fff1ef;
+            color: #FF6743;
+            padding: 5px;
+            margin: 5px;
+          }
+        }
+      }
+    }
+  }
+}

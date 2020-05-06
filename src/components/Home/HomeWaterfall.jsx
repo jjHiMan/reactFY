@@ -1,5 +1,6 @@
 import React,{Fragment} from "react";
 import '../../assets/Home/homeWaterfall.scss'
+import Waterfall from "../common/Waterfall";
 export default class HomeWaterfall extends React.Component {
     constructor(props) {
         super(props);
@@ -10,11 +11,7 @@ export default class HomeWaterfall extends React.Component {
         return (
             <Fragment>
                 <h2 className={"waterfall-header"}>为你推荐</h2>
-                <ul className={"waterfall-content"}>
-                    <li>
-
-                    </li>
-                </ul>
+                <Waterfall></Waterfall>
             </Fragment>
         )
     }

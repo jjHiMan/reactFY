@@ -6,14 +6,14 @@ export default class ShowList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            dialog:false
+            dialog: false
         }
     }
 
     render() {
         return (
-            <div className={"showList"} style={{position:"relative"}}>
-                <div style={{height:"44px"}}></div>
+            <div className={"showList"} style={{ position: "relative" }}>
+                <div style={{ height: "44px" }}></div>
                 <div className={"showList-nav"}>
                     <div className={"showList-location"}>
                         <div>
@@ -35,23 +35,25 @@ export default class ShowList extends React.Component {
                 </div>
                 <Waterfall></Waterfall>
                 <div className={"showList-header"}>
-                    <span className={"iconfont icon-xiangqian"}></span>
+                    <span className={"iconfont icon-xiangqian"} onClick={() => {
+                        this.props.history.go(-1);
+                    }}></span>
                     <span>演出</span>
-                    <span className={"iconfont icon-diandian"} onClick={()=>{
+                    <span className={"iconfont icon-diandian"} onClick={() => {
                         this.setState({
-                            dialog:true
+                            dialog: true
                         })
                     }}></span>
                 </div>
                 {
-                    this.state.dialog?<div className={"shade"} onClick={()=>{
+                    this.state.dialog ? <div className={"shade"} onClick={() => {
                         this.setState({
-                            dialog:false
+                            dialog: false
                         })
-                    }}></div>:""
+                    }}></div> : ""
                 }
                 {
-                    this.state.dialog?<Dialog></Dialog>:""
+                    this.state.dialog ? <Dialog></Dialog> : ""
                 }
             </div>
         )

@@ -4,6 +4,9 @@ import axios from "axios";
 import {
     connect
 } from "react-redux";
+import {
+    Link
+} from 'react-router-dom';
 import { upWaterFall } from '../../store/actionCreator/home';
 class Waterfall extends React.Component {
     constructor(props) {
@@ -18,24 +21,26 @@ class Waterfall extends React.Component {
                 <div className={"showList-waterfall-content"}>
                     {
                         list.map(v => (
-                            <div className={"showList-waterfall-list"} key={v.schedular_id}>
-                                <img style={{ width: "100%", borderRadius: "5px 5px 0 0" }} src={v.pic} alt="" />
-                                <div className={"waterfall-content"}>
-                                    <div>
-                                        <span><img src={v.method_icon} alt="" />{v.name}</span>
+                            <Link to={"/showDetails"}>
+                                <div className={"showList-waterfall-list"} key={v.schedular_id}>
+                                    <img style={{ width: "100%", borderRadius: "5px 5px 0 0" }} src={v.pic} alt="" />
+                                    <div className={"waterfall-content"}>
+                                        <div>
+                                            <span><img src={v.method_icon} alt="" />{v.name}</span>
+                                        </div>
+                                        <p><span style={{ color: "#666666" }}>2020.06.12 - 06.14</span></p>
+                                        <p>
+                                            <span>￥{v.min_price} </span>
+                                            <span> 起</span>
+                                        </p>
+                                        <p>
+                                            <span>电子票</span>
+                                            <span>可选座</span>
+                                            <span>限时8折起</span>
+                                        </p>
                                     </div>
-                                    <p><span style={{ color: "#666666" }}>2020.06.12 - 06.14</span></p>
-                                    <p>
-                                        <span>￥{v.min_price} </span>
-                                        <span> 起</span>
-                                    </p>
-                                    <p>
-                                        <span>电子票</span>
-                                        <span>可选座</span>
-                                        <span>限时8折起</span>
-                                    </p>
                                 </div>
-                            </div>
+                            </Link>
                         ))
                     }
                 </div>
@@ -53,7 +58,7 @@ function mapStateToProps({ home }) {
 }
 function mapDispatchToProps(dispatch) {
     return {
-        async listMore(city_id=0) {
+        async listMore(city_id = 0) {
             // https://api.juooo.com/Show/Search/getShowList?city_id=0&page=1
             const { data } = await axios.get("/orange/Show/Search/getShowList", {
                 params: {
@@ -62,7 +67,7 @@ function mapDispatchToProps(dispatch) {
             });
 
             dispatch(upWaterFall(data.data));
-            console.log(data);
+            // console.log(data);
 
         }
     }

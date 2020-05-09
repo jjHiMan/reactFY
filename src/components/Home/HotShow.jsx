@@ -60,7 +60,7 @@ function mapDispatchToProps(dispatch) {
             });
 
             dispatch(upHomeHotShow(data.data));
-            console.log(data);
+            // console.log(data);
 
         }
     }

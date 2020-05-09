@@ -22,7 +22,12 @@ class ShowDetails extends Component {
                             </div>
                             <div className={"brief_wrapper_box"}></div>
                             <div className={"brief_header"}>
-                                <span className={"brief_header_text"}>演出详情</span>
+                                <div className={"brief_header_text"}>
+                                    <span className={"iconfont icon-xiangqian"} onClick={() => {
+                                        this.props.history.go(-1);
+                                    }}></span>
+                                    <span className={"brief_header_texts"}>演出详情</span>
+                                </div>
                                 <div className={"brief_header_content"}>
                                     <div className={"brief_img_box"}>
                                         <img src="https://image.juooo.com/group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
@@ -40,12 +45,15 @@ class ShowDetails extends Component {
                             <div className={"brief_secondary_wrapper"}>
                                 <div className={"brief_secondary_support"}>
                                     <div className={"brief_support_one"}>
+                                        <div className={"support_one_div"}></div>
                                         <span>可选座</span>
                                     </div>
                                     <div className={"brief_support_one"}>
+                                        <div className={"support_one_div"}></div>
                                         <span>电子票</span>
                                     </div>
                                     <div className={"brief_support_one"}>
+                                        <div className={"support_one_div"}></div>
                                         <span>退票无忧</span>
                                     </div>
                                 </div>
@@ -68,7 +76,9 @@ class ShowDetails extends Component {
                                             </span>
                                         </div>
                                     </div>
-                                    <div className={"brief_secondary_img"}></div>
+                                    <div className={"brief_secondary_img"}>
+                                        <i className={"iconfont icon-location"}></i>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -182,7 +192,7 @@ function mapDispatchToProps(dispatch) {
             });
 
             dispatch(upShowDetails(data.data));
-            console.log(data);
+            // console.log(data);
 
         }
     }

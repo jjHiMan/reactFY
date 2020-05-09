@@ -21,6 +21,9 @@
 .foot a i{
     font-size: 45px;
 }
+.foot a .icon-piaojia-copy-copy{
+    margin-left: 16px;
+}
 .foot-active{
     color:red;
 }

@@ -1,69 +1,68 @@
-import React,{Fragment} from "react";
-
-export default class StageDesign extends React.Component {
+import React, { Fragment } from "react";
+import axios from "axios";
+import {
+    connect
+} from "react-redux";
+import { upDesigns } from '../../store/actionCreator/designs';
+import {
+    Link
+} from 'react-router-dom';
+class StageDesign extends React.Component {
     constructor(props) {
         super(props);
         this.state = {}
     }
 
     render() {
+        const { list } = this.props;
         return (
             <Fragment>
                 <div className={"hot-header"}>
                     <strong>舞台剧</strong>
-                    <span>全部 ></span>
+                    <Link to={"/showList"}>
+                        <span>全部 ></span>
+                    </Link>
                 </div>
                 <div className={"hot-show"}>
-                    <div className={"hot-show-list"}>
-                        <a href="">
-                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
-                            <h3>【演出延期】2020第七届城市戏剧节 乌镇戏剧节“最佳戏剧奖”“最佳个人表现奖”团队最新作品《涂红》-深圳站</h3>
-                            <span className={"hot-price"}>￥99 </span>
-                            <span className={"hot-hei"}> 起</span>
-                        </a>
-                    </div>
-                    <div className={"hot-show-list"}>
-                        <a href="">
-                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
-                            <h3>【演出延期】2020第七届城市戏剧节 乌镇戏剧节“最佳戏剧奖”“最佳个人表现奖”团队最新作品《涂红》-深圳站</h3>
-                            <span className={"hot-price"}>￥99 </span>
-                            <span className={"hot-hei"}> 起</span>
-                        </a>
-                    </div>
-                    <div className={"hot-show-list"}>
-                        <a href="">
-                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
-                            <h3>【演出延期】2020第七届城市戏剧节 乌镇戏剧节“最佳戏剧奖”“最佳个人表现奖”团队最新作品《涂红》-深圳站</h3>
-                            <span className={"hot-price"}>￥99 </span>
-                            <span className={"hot-hei"}> 起</span>
-                        </a>
-                    </div>
-                    <div className={"hot-show-list"}>
-                        <a href="">
-                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
-                            <h3>【演出延期】2020第七届城市戏剧节 乌镇戏剧节“最佳戏剧奖”“最佳个人表现奖”团队最新作品《涂红》-深圳站</h3>
-                            <span className={"hot-price"}>￥99 </span>
-                            <span className={"hot-hei"}> 起</span>
-                        </a>
-                    </div>
-                    <div className={"hot-show-list"}>
-                        <a href="">
-                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
-                            <h3>【演出延期】2020第七届城市戏剧节 乌镇戏剧节“最佳戏剧奖”“最佳个人表现奖”团队最新作品《涂红》-深圳站</h3>
-                            <span className={"hot-price"}>￥99 </span>
-                            <span className={"hot-hei"}> 起</span>
-                        </a>
-                    </div>
-                    <div className={"hot-show-list"}>
-                        <a href="">
-                            <img src="https://image.juooo.com//group1/M00/03/6C/rAoKmV4AZ3GAK-xpAABsQm0qZyQ219.jpg" alt="" />
-                            <h3>【演出延期】2020第七届城市戏剧节 乌镇戏剧节“最佳戏剧奖”“最佳个人表现奖”团队最新作品《涂红》-深圳站</h3>
-                            <span className={"hot-price"}>￥99 </span>
-                            <span className={"hot-hei"}> 起</span>
-                        </a>
-                    </div>
+                    {
+                        list.map(v => (
+                            <div className={"hot-show-list"} key={v.sche_id}>
+                                <Link to={"/showDetails"}>
+                                    <img src={v.pic} alt="" />
+                                    <h3>{v.schedular_name}</h3>
+                                    <span className={"hot-price"}>￥{v.high_price}</span>
+                                    <span className={"hot-hei"}> 起</span>
+                                </Link>
+                            </div>
+                        ))
+                    }
                 </div>
             </Fragment>
         )
     }
+    componentDidMount() {
+        this.props.listMore.call(this);
+    }
 }
+function mapStateToProps({ designs }) {
+    return {
+        list: designs.list
+    }
+}
+function mapDispatchToProps(dispatch) {
+    return {
+        async listMore(city_id = 0) {
+            // https://api.juooo.com/home/index/getFloorShow?city_id=0
+            const { data } = await axios.get("/orange/home/index/getFloorShow", {
+                params: {
+                    city_id
+                }
+            });
+
+            dispatch(upDesigns(data.data[2]));
+            // console.log(data.data[2]);
+
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(StageDesign);

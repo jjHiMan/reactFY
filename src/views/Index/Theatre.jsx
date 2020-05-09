@@ -3,6 +3,9 @@ import "../../assets/theatre/header.scss";
 import "../../assets/theatre/body.scss";
 import axios from "axios";
 import {
+    Link
+} from 'react-router-dom';
+import {
     connect
 } from "react-redux";
 import { upTheatre } from '../../store/actionCreator/theatre';
@@ -29,7 +32,7 @@ class Theatre extends React.Component {
                                             <li className={"theatre_li"}>
                                                 <div className={"theatre_info_show"}>
                                                     <div className={"theatre_info"}>
-                                                        <a href="" className={"theater-pic-name-count"}>
+                                                        <div className={"theater-pic-name-count"}>
                                                             <div className={"theater-pic-wrap"}>
                                                                 <img className={"theater_pic"} src={v.pic} alt="" />
                                                             </div>
@@ -37,10 +40,10 @@ class Theatre extends React.Component {
                                                                 <p className={"theater_name"}>{v.name}</p>
                                                                 <p className={"theater_count"}>92场在售演出</p>
                                                             </div>
-                                                        </a>
-                                                        <a href="" className={"theater_link"}>
+                                                        </div>
+                                                        <div className={"theater_link"}>
                                                             <img className={"theater_more_btn"} src="https://m.juooo.com/static/img/more.2ce7873.png" alt="" />
-                                                        </a>
+                                                        </div>
                                                     </div>
                                                     <div className={"theatre_show"}>
                                                         <div className={"theater-show-wrap"}>
@@ -52,9 +55,9 @@ class Theatre extends React.Component {
                                                                                 <p className={"show_date"}>{v.show_time}</p>
                                                                                 <span className={"show_dot"}></span>
                                                                             </div>
-                                                                            <a className={"theater-show-pic"} href="">
+                                                                            <div className={"theater-show-pic"}>
                                                                                 <img className={"show_pic"} src={v.pic} alt="" />
-                                                                            </a>
+                                                                            </div>
                                                                         </div>
                                                                     ))
                                                                 }
@@ -93,7 +96,7 @@ function mapDispatchToProps(dispatch) {
             });
 
             dispatch(upTheatre(data.data));
-            console.log(data);
+            // console.log(data);
 
         }
     }

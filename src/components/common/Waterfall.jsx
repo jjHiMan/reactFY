@@ -21,9 +21,9 @@ class Waterfall extends React.Component {
                 <div className={"showList-waterfall-content"}>
                     {
                         list.map(v => (
-                            <Link to={"/showDetails"}>
-                                <div className={"showList-waterfall-list"} key={v.schedular_id}>
-                                    <img style={{ width: "100%", borderRadius: "5px 5px 0 0" }} src={v.pic} alt="" />
+                            <Link to={"/showDetails"} key={v.schedular_id}>
+                                <div className={"showList-waterfall-list"}>
+                                    <img className={"waterfall-list-img"} src={v.pic} alt="" />
                                     <div className={"waterfall-content"}>
                                         <div>
                                             <span><img src={v.method_icon} alt="" />{v.name}</span>
@@ -53,16 +53,19 @@ class Waterfall extends React.Component {
 }
 function mapStateToProps({ home }) {
     return {
-        list: home.list
+        list: home.list,
+        city_id: home.city_id,
+        category: home.category
     }
 }
 function mapDispatchToProps(dispatch) {
     return {
-        async listMore(city_id = 0) {
+        async listMore() {
             // https://api.juooo.com/Show/Search/getShowList?city_id=0&page=1
             const { data } = await axios.get("/orange/Show/Search/getShowList", {
                 params: {
-                    city_id,
+                    city_id:this.props.city_id,
+                    category:this.props.category
                 }
             });
 

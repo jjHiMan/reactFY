@@ -14,7 +14,7 @@ export default class HomeLabel extends React.Component {
     // https://api.juooo.com/home/index/getClassifyHome?city_id=1&abbreviation=SZ&version=6.1.1&referer=2
     async getClassifyHome() {
         const { data } = await axios.get('https://api.juooo.com/home/index/getClassifyHome?city_id=1&abbreviation=SZ&version=6.1.1&referer=2')
-
+        // console.log(data)
         this.setState({
             classify_list: data.data.classify_list
         })
@@ -25,18 +25,18 @@ export default class HomeLabel extends React.Component {
     render() {
         return (
             <Fragment>
-                <Link to={"/showList"}>
-                    <div className={"middle-item"}>
-                        {
-                            this.state.classify_list.map(v => (
-                                <li key={v.id}>
+                <div className={"middle-item"}>
+                    {
+                        this.state.classify_list.map((v, i) => (
+                            <Link to={{ pathname: "/showList", query: { city_id: 0, category: (35+i)/1 } }} key={v.id}>
+                                <li>
                                     <span><img src={v.pic} alt="" /></span>
-                                    <span>{v.name}</span>
+                                    <span className={"middle-item-text"}>{v.name}</span>
                                 </li>
-                            ))
-                        }
-                    </div>
-                </Link>
+                            </Link>
+                        ))
+                    }
+                </div>
             </Fragment >
         )
     }

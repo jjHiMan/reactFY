@@ -193,7 +193,6 @@ function mapDispatchToProps(dispatch) {
 
             dispatch(upShowDetails(data.data));
             // console.log(data);
-
         }
     }
 }

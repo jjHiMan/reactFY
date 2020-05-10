@@ -6,6 +6,8 @@ export default function (state=homeHotShowInit,{type,payload}) {
     }
     if(type === "UP_WATERFALL"){
         state.list = payload.list;
+        state.city_id = payload.city_id;
+        state.category = payload.category;
     }
     return state;
 }

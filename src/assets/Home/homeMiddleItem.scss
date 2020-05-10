@@ -8,14 +8,16 @@
 
   li {
     list-style: none;
-    width: 20%;
+    width: 137px;
     height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     color: #666;
-
-    span > img {
+    .middle-item-text{
+      width: 135px;
+    }
+    span img {
       width: 80px;
       height: 80px;
     }

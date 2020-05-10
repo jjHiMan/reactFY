@@ -20,7 +20,8 @@ class HotShow extends React.Component {
             <Fragment>
                 <div className={"hot-header"}>
                     <strong>热门演出</strong>
-                    <Link to={"/showList"}>
+                    {/* "/showList?city_id=0&category=0" */}
+                    <Link to={{pathname:"/showList",query:{city_id:0,category:0}}}>
                         <span>全部 ></span>
                     </Link>
                 </div>
